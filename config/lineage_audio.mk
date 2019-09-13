@@ -9,7 +9,11 @@ RINGTONE_PATH := vendor/lineage/prebuilt/common/media/audio/ringtones
 # Alarms
 PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/CyanAlarm.ogg:system/media/audio/alarms/CyanAlarm.ogg \
-    $(ALARM_PATH)/NuclearLaunch.ogg:system/media/audio/alarms/NuclearLaunch.ogg
+    $(ALARM_PATH)/NuclearLaunch.ogg:system/media/audio/alarms/NuclearLaunch.ogg \
+    $(ALARM_PATH)/Smooth.ogg:system/media/audio/alarms/Smooth.ogg \
+    $(ALARM_PATH)/PowerOn.ogg:system/media/audio/alarms/PowerOn.ogg \
+    $(ALARM_PATH)/PowerOff.ogg:system/media/audio/alarms/PowerOff.ogg
+
 
 # Notifications
 PRODUCT_COPY_FILES += \
@@ -20,7 +24,9 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Naughty.ogg:system/media/audio/notifications/Naughty.ogg \
     $(NOTIFICATION_PATH)/Pong.ogg:system/media/audio/notifications/Pong.ogg \
     $(NOTIFICATION_PATH)/Rang.ogg:system/media/audio/notifications/Rang.ogg \
-    $(NOTIFICATION_PATH)/Stone.ogg:system/media/audio/notifications/Stone.ogg
+    $(NOTIFICATION_PATH)/Stone.ogg:system/media/audio/notifications/Stone.ogg \
+    $(NOTIFICATION_PATH)/PowerOn.ogg:system/media/audio/alarms/PowerOn.ogg \
+    $(NOTIFICATION_PATH)/PowerOff.ogg:system/media/audio/alarms/PowerOff.ogg
 
 # Ringtones
 ifeq ($(TARGET_NEEDS_BOOSTED_SOUNDS),true)
@@ -38,5 +44,6 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Lyon.ogg:system/media/audio/ringtones/Lyon.ogg \
     $(RINGTONE_PATH)/Rockin.ogg:system/media/audio/ringtones/Rockin.ogg \
     $(RINGTONE_PATH)/Sheep.mp3:system/media/audio/ringtones/Sheep.mp3 \
-    $(RINGTONE_PATH)/Yukaay.ogg:system/media/audio/ringtones/Yukaay.ogg
+    $(RINGTONE_PATH)/Yukaay.ogg:system/media/audio/ringtones/Yukaay.ogg \
+    $(RINGTONE_PATH)/Smooth.ogg:system/media/audio/alarms/Smooth.ogg \
 endif
