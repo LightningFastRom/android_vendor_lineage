@@ -27,8 +27,34 @@
 
     <bool name="quick_settings_show_full_alarm">true</bool>
 
+
+    <string name="quick_settings_tiles_default" translatable="false"> airplane,cell,wifi,bt,hotspot,usb_tether,cast,location,adb_network,rotation,battery,dnd
+    </string>
+
+    <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
+    <string name="quick_settings_tiles_stock" translatable="false">    airplane,cell,wifi,bt,hotspot,usb_tether,cast,location,adb_network,rotation,battery,dnd,flashlight,nfc,inversion,saver,work,night,livedisplay,ambient_display,caffeine,heads_up,sync,volume_panel,profiles
+    </string>
+    <!-- The tiles to display in QuickSettings in retail mode -->
+    <string name="quick_settings_tiles_retail_mode" translatable="false">
+        airplane,cell,wifi,bt,cast,location,rotation,battery,dnd
+    </string>
     <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
          does not work well, particularly with noisy touchscreens. Note that disabling it may
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+    <!-- Whether or not we show the number in the bar. -->
+    <bool name="config_statusBarShowNumber">true</bool>
+
+    <!-- The number of columns in the QuickSettings -->
+    <integer name="quick_settings_num_columns">4</integer>
+
+    <!-- The number of rows in the QuickSettings -->
+    <integer name="quick_settings_num_rows">1</integer>
+
+    <!-- The number of columns that the top level tiles span in the QuickSettings -->
+    <integer name="quick_settings_user_time_settings_tile_span">1</integer>
+
+    <bool name="enable_volume_ui">true</bool>
+
+    <bool name="config_showTaskManagerSwitcher">true</bool>
 </resources>
