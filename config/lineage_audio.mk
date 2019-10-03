@@ -29,14 +29,6 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/PowerOff.ogg:system/media/audio/alarms/PowerOff.ogg
 
 # Ringtones
-ifeq ($(TARGET_NEEDS_BOOSTED_SOUNDS),true)
-PRODUCT_COPY_FILES += \
-    $(RINGTONE_PATH)/boosted/Boxbeat.ogg:system/media/audio/ringtones/Boxbeat.ogg \
-    $(RINGTONE_PATH)/boosted/CyanTone.ogg:system/media/audio/ringtones/CyanTone.ogg \
-    $(RINGTONE_PATH)/boosted/Highscore.ogg:system/media/audio/ringtones/Highscore.ogg \
-    $(RINGTONE_PATH)/boosted/Lyon.ogg:system/media/audio/ringtones/Lyon.ogg \
-    $(RINGTONE_PATH)/boosted/Rockin.ogg:system/media/audio/ringtones/Rockin.ogg
-else
 PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Boxbeat.ogg:system/media/audio/ringtones/Boxbeat.ogg \
     $(RINGTONE_PATH)/CyanTone.ogg:system/media/audio/ringtones/CyanTone.ogg \
@@ -45,5 +37,4 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Rockin.ogg:system/media/audio/ringtones/Rockin.ogg \
     $(RINGTONE_PATH)/Sheep.mp3:system/media/audio/ringtones/Sheep.mp3 \
     $(RINGTONE_PATH)/Yukaay.ogg:system/media/audio/ringtones/Yukaay.ogg \
-    $(RINGTONE_PATH)/Smooth.ogg:system/media/audio/alarms/Smooth.ogg \
-endif
+    $(RINGTONE_PATH)/Smooth.ogg:system/media/audio/alarms/Smooth.ogg
