@@ -66,6 +66,7 @@ SELINUX_DEFCONFIG := $(TARGET_KERNEL_SELINUX_CONFIG)
 ## Internal variables
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
+KERNEL_RELEASE := $(KERNEL_OUT)/include/config/kernel.release
 
 ifeq ($(KERNEL_ARCH),x86_64)
 KERNEL_DEFCONFIG_ARCH := x86
@@ -192,7 +193,7 @@ KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 # $(1): output path (The value passed to O=)
 # $(2): target to build (eg. defconfig, modules, dtbo.img)
 define internal-make-kernel-target
-$(PATH_OVERRIDE) $(MAKE) -C $(KERNEL_SRC) O=$(1) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(2)
+$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(1) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(2)
 endef
 
 # Make a kernel target
@@ -246,7 +247,8 @@ INSTALLED_KERNEL_MODULES: depmod-host
 	$(hide) if grep -q '=m' $(KERNEL_CONFIG); then \
 			echo "Installing Kernel Modules"; \
 			$(call make-kernel-target,INSTALL_MOD_PATH=$(MODULES_INTERMEDIATES) modules_install); \
-			modules=$$(find $(MODULES_INTERMEDIATES) -type f -name '*.ko'); \
+			kernel_release=$$(cat $(KERNEL_RELEASE)) \
+			modules=$$(find $(MODULES_INTERMEDIATES)/lib/modules/$$kernel_release -type f -name '*.ko'); \
 			for f in $$modules; do \
 				$(KERNEL_TOOLCHAIN_PATH)strip --strip-unneeded $$f; \
 			done; \

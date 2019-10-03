@@ -20,6 +20,7 @@
 #
 #   TARGET_KERNEL_SOURCE               = Kernel source dir, optional, defaults
 #                                          to kernel/$(TARGET_DEVICE_DIR)
+#   TARGET_KERNEL_ADDITIONAL_FLAGS     = Additional make flags, optional
 #   TARGET_KERNEL_ARCH                 = Kernel Arch
 #   TARGET_KERNEL_CROSS_COMPILE_PREFIX = Compiler prefix (e.g. arm-eabi-)
 #                                          defaults to arm-linux-androidkernel- for arm
@@ -68,10 +69,8 @@ endif
 
 ifeq ($(KERNEL_TOOLCHAIN),)
 KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN_PREFIX)
-else
-ifneq ($(KERNEL_TOOLCHAIN_PREFIX),)
+else ifneq ($(KERNEL_TOOLCHAIN_PREFIX),)
 KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX)
-endif
 endif
 
 ifneq ($(USE_CCACHE),)
@@ -115,6 +114,10 @@ endif
 ifeq ($(HOST_OS),darwin)
   KERNEL_MAKE_FLAGS += C_INCLUDE_PATH=$(BUILD_TOP)/external/elfutils/libelf:/usr/local/opt/openssl/include
   KERNEL_MAKE_FLAGS += LIBRARY_PATH=/usr/local/opt/openssl/lib
+endif
+
+ifneq ($(TARGET_KERNEL_ADDITIONAL_FLAGS),)
+  KERNEL_MAKE_FLAGS += $(TARGET_KERNEL_ADDITIONAL_FLAGS)
 endif
 
 # Set DTBO image locations so the build system knows to build them

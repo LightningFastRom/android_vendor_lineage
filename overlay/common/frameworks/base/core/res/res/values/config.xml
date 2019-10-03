@@ -76,12 +76,6 @@
    <!-- Set icon mask to circle -->
    <string name="config_icon_mask" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
 
-    <!-- Controls the WiFi wakeup feature.
-          0 = Not available.
-          1 = Available.
-    -->
-    <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
-
     <!-- Whether action menu items should be displayed in ALLCAPS or not.
          Defaults to true. If this is not appropriate for specific locales
          it should be disabled in that locale's resources. -->
@@ -95,4 +89,9 @@
 
     <!-- Whether or not we should show the option to show battery percentage -->
     <bool name="config_battery_percentage_setting_available">false</bool>
+
+    <!-- When true, the tethering upstream network follows the current default
+         Internet network (except when the current default network is mobile,
+         in which case a DUN network will be used if required). -->
+    <bool name="config_tether_upstream_automatic">true</bool>
 </resources>
