@@ -125,6 +125,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
+
+
 # Required Lineage packages
 PRODUCT_PACKAGES += \
     LineageParts \
@@ -134,19 +136,21 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
-    PhotoTable \
     Terminal
 
 # Custom Lineage packages
 PRODUCT_PACKAGES += \
+    AudioFX \
+    Backgrounds \
     LineageSettingsProvider \
     LightningSetupWizard \
     Eleven \
-    Pixelated \
-    OpenCamera \
+    ExactCalculator \
+    Jelly \
+    LockClock \
     TrebuchetQuickStep \
-    Updater \
-    WallpaperPicker
+    OpenCamera \
+    Updater
 
 # Exchange support
 PRODUCT_PACKAGES += \
@@ -238,6 +242,7 @@ PRODUCT_PACKAGES_DEBUG += \
 ifeq ($(DEVICE_SUPPORT_DJ),true)
     PRODUCT_PACKAGES += \
         HackersKeyboard
+
     IS_PERSONAL := Personal
 else
     IS_PERSONAL := XDA-BUILD
