@@ -25,8 +25,8 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Pong.ogg:system/media/audio/notifications/Pong.ogg \
     $(NOTIFICATION_PATH)/Rang.ogg:system/media/audio/notifications/Rang.ogg \
     $(NOTIFICATION_PATH)/Stone.ogg:system/media/audio/notifications/Stone.ogg \
-    $(NOTIFICATION_PATH)/PowerOn.ogg:system/media/audio/alarms/PowerOn.ogg \
-    $(NOTIFICATION_PATH)/PowerOff.ogg:system/media/audio/alarms/PowerOff.ogg
+    $(NOTIFICATION_PATH)/PowerOn.ogg:system/media/audio/notifications/PowerOn.ogg \
+    $(NOTIFICATION_PATH)/PowerOff.ogg:system/media/audio/notifications/PowerOff.ogg
 
 # Ringtones
 PRODUCT_COPY_FILES += \
@@ -37,4 +37,4 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Rockin.ogg:system/media/audio/ringtones/Rockin.ogg \
     $(RINGTONE_PATH)/Sheep.mp3:system/media/audio/ringtones/Sheep.mp3 \
     $(RINGTONE_PATH)/Yukaay.ogg:system/media/audio/ringtones/Yukaay.ogg \
-    $(RINGTONE_PATH)/Smooth.ogg:system/media/audio/alarms/Smooth.ogg
+    $(RINGTONE_PATH)/Smooth.ogg:system/media/audio/ringtones/Smooth.ogg
