@@ -137,6 +137,9 @@ PRODUCT_PACKAGES += \
     LightningSetupWizard \
     Updater
 
+# LightningFastRom packages  
+PRODUCT_PACKAGES += \
+    LightningWeather
 # Extra tools in Lineage
 PRODUCT_PACKAGES += \
     7z \
