@@ -30,7 +30,6 @@ PRODUCT_PACKAGES += \
     Etar \
     OpenCamera \
     Jelly \
-    LockClock \
     Profiles \
     Seedvault \
     TrebuchetQuickStep \
@@ -44,19 +43,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Custom off-mode charger
-ifeq ($(WITH_LINEAGE_CHARGER),true)
-PRODUCT_PACKAGES += \
-    lineage_charger_res_images \
-    font_log.png \
-    libhealthd.lineage
-endif
-
-BOARD_CHARGER_SHOW_PERCENTAGE := true
-
 # Customizations
 PRODUCT_PACKAGES += \
-    LineageNavigationBarNoHint
+    IconShapeSquareOverlay \
+    LineageNavigationBarNoHint \
+    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
