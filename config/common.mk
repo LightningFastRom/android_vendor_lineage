@@ -231,7 +231,11 @@ ifeq ($(DEVICE_SUPPORT_DJ),true)
         HackersKeyboard
     IS_PERSONAL := Personal
 else
-    IS_PERSONAL := XDA-BUILD
+    ifeq ($(TEST_BUILD),true)
+        IS_PERSONAL := BUILD
+    else
+        IS_PERSONAL := XDA-BUILD
+    endif
 endif
 
 # Root
@@ -289,7 +293,11 @@ endif
 ifeq ($(WITH_GAPPS), true)
     HAS_GAPPS := Sweetened
 else
-    HAS_GAPPS := Unsweetened
+    ifeq ($(TEST_BUILD),true)
+        HAS_GAPPS := TEST
+    else
+        HAS_GAPPS := Unsweetene
+    endif
 endif
 
 # Filter out random types, so it'll reset to UNOFFICIAL
